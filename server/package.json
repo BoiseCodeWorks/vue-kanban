@@ -1,0 +1,30 @@
+{
+  "name": "vue-kanban-server",
+  "version": "1.0.0",
+  "description": "The server for vue-kanban",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug-15": "node --debug index.js",
+    "start-15": "node index.js",
+    "debug": "babel-node --presets es2015 --debug index.js",
+    "start": "babel-node --presets es2015 index.js"
+  },
+  "author": "Jake Overall <joverall22@gmail.com>",
+  "dependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-es2015": "^6.22.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.16.0",
+    "connect-mongo": "^1.3.2",
+    "connect-mongodb-session": "^1.3.0",
+    "cors": "^2.8.1",
+    "express": "^4.14.1",
+    "express-session": "^1.15.0",
+    "mongoose": "^4.8.1"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  }
+}

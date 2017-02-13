@@ -1,6 +1,6 @@
 #Vue-Kanban
 
-A non trivial application utilzing vuejs and node
+A non trivial application utilizing vuejs and node
 
 
 ###The Setup N-tier
@@ -42,13 +42,3 @@ It will probably be helpful to start on the backend of this application first. U
 The active user is always stored on the server side via sessions so you should be able to enforce some of the security concerns using something like `req.session.uid`
 
 For now all users can see all collections and anyone can create boards, lists, tasks, or comments. Once  we have all of the features working we will move to an invite only board setup that will have boards belonging to a primary user and having contributors.
-
-
-
-
-
-
-
-
-
-

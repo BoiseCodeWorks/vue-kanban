@@ -40,7 +40,5 @@ schema.methods.validatePassword = function (password) {
   })
 };
 
-schema.preventDefaultApi = true
-
 
 module.exports = mongoose.model('User', schema)

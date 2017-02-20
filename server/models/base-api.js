@@ -46,7 +46,8 @@ function API(model, schema) {
     var action = actions.create
 
     let model = new schema(req.body)
-
+    model.creatorId = req.session.uid
+    
     model.save()
       .then(data => {
         return res.send(handleResponse(action, data))

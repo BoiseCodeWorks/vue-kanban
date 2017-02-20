@@ -2,8 +2,8 @@ import { actions } from '../config/constants'
 
 export default API
 
-function API(modelName, schema) {
-  if (schema.preventDefaultApi) { return }
+function API(model, schema) {
+  if (model.preventDefaultApi) { return {} }
   return {
     get: get,
     post: create,

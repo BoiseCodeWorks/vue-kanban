@@ -47,6 +47,12 @@ io.on('connection', function(socket){
 		socket: socket.id,
 		message: 'Welcome to the Jungle'
 	})
+
+    socket.on('update', function(data){
+        console.log(data)
+    })
+
+
 })
 
 

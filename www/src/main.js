@@ -9,6 +9,11 @@ let socket = io('http://localhost:3000')
 
 socket.on('CONNECTED', function(data){
   console.log(data)
+
+  socket.emit('update', {data: 'blarg', boardId: '3289748320'})
+
+
+
 })
 
 

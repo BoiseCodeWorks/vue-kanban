@@ -15,6 +15,7 @@ let server = require('http').createServer(app)
 
 function Validate(req, res, next) {
     // ONLY ALLOW GET METHOD IF NOT LOGGED IN 
+    console.log(req.session)
     if (req.method !== 'GET' && !req.session.uid) {
         return res.send({ error: 'Please Login or Register to continue' })
     }
@@ -31,11 +32,12 @@ app.use(session)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('*', logger)
-app.use(Auth)
+app.use('*', cors(corsOptions))
+app.use('/', Auth)
 
 // LOCKS API TO REQUIRE USER AUTH
 app.use(Validate)
-app.use('/api', cors(corsOptions), api)
+app.use('/api', api)
 app.use('/', defaultErrorHandler)
 
 let io = require('socket.io')(server, {
@@ -47,13 +49,14 @@ io.on('connection', function(socket){
 		socket: socket.id,
 		message: 'Welcome to the Jungle'
 	})
-
-    socket.on('update', function(data){
-        console.log(data)
+    
+    socket.on('update', (d)=>{
+        console.log(d)  
     })
 
-
 })
+
+
 
 
 

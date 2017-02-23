@@ -11,6 +11,7 @@
     "test": "npm run unit"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "socket.io-client": "^1.7.3",
     "vue": "^2.1.10",
     "vue-router": "^2.2.0"

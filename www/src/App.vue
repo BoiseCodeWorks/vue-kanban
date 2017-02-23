@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <error></error>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Error from './components/Error'
 export default {
-  name: 'app'
+  name: 'app',
+  components:{
+    Error
+  }
 }
 </script>
 

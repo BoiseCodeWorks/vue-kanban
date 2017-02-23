@@ -12,7 +12,7 @@ function API(model, schema) {
   }
 
   function get(req, res, next) {
-    console.log("requesting api ", modelName)
+    console.log("requesting api ", model.name)
     var id = req.params.id || req.query.id || '';
     var params = req.params.id ? req.params : {};
     var query = req.query.with || '';
@@ -92,7 +92,7 @@ function API(model, schema) {
 
   function handleResponse(action, data, error) {
     var response = {
-      schemaType: modelName,
+      schemaType: model.name,
       action: action,
       data: data
     }

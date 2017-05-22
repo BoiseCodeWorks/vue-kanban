@@ -1,9 +1,9 @@
-#Vue-Kanban
+# Vue-Kanban
 
 A non trivial application utilizing vuejs and node
 
 
-###The Setup N-tier
+### The Setup N-tier
 
 ***NOTE:*** This project is going to take a while
 
@@ -20,14 +20,14 @@ The goal of each of these projects is to be decoupled from each other. Meaning y
 ![n-tier](http://www.amzi.com/articles/youbet_architecture.gif)
 
 
-###The Server
+### The Server
 On the server we are utilizing a node-mongodb setup with express sessions and a mongoose ORM. The server side code has been setup in a somewhat oppionated architecture that will help and hinder you. You will want to make sure that you work within the confines of what has been setup for you to this point. 
 
-###The WWW Client
+### The WWW Client
 The Web client has been setup to utilize one of the shiney new javascript frameworks Vuejs. There are several advantages to using this setup but again it will force you into utilizing a structure that you may not be ver comfortable with. 
 
 
-###Feature Requests (AKA your tasks)
+### Feature Requests (AKA your tasks)
 
 Kanban is a simple enough application. Users have the request to be able to create and manage boards, lists, and tasks. Tasks should also have the ability to add notes or comments and should be assigned to individual users. This setup will take a while to get all ironed out but we have some time to work on it so don't fret.
 

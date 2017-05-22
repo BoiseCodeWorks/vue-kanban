@@ -8,7 +8,9 @@
     "debug-15": "node --debug index.js",
     "start-15": "node index.js",
     "debug": "babel-node --presets es2015 --debug index.js",
-    "start": "babel-node --presets es2015 index.js"
+    "start": "babel-node --presets es2015 index.js",
+    "dev": "babel-node --presets es2015 index.js",
+    "run": "babel-node --presets es2015 index.js"
   },
   "author": "Jake Overall <joverall22@gmail.com>",
   "dependencies": {

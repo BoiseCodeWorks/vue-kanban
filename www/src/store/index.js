@@ -5,10 +5,6 @@ let api = axios.create({
   timeout: 2000,
   withCredentials: true
 })
-api.post('http://localhost:3000/login', {
-  email: 'jake1@boisecodeworks.com',
-  password: 'testing123'
-})
 
 // REGISTER ALL DATA HERE 
 let state = {

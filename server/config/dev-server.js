@@ -23,8 +23,8 @@ function Validate(req, res, next) {
 }
 
 function logger(req, res, next) {
-	console.log('INCOMING REQUEST', req.url)
-	next()
+    console.log('INCOMING REQUEST', req.url)
+    next()
 }
 
 // REGISTER MIDDLEWARE
@@ -44,20 +44,16 @@ let io = require('socket.io')(server, {
     origins: '*:*'
 })
 
-io.on('connection', function(socket){
-	socket.emit('CONNECTED', {
-		socket: socket.id,
-		message: 'Welcome to the Jungle'
-	})
-    
-    socket.on('update', (d)=>{
-        console.log(d)  
+io.on('connection', function (socket) {
+    socket.emit('CONNECTED', {
+        socket: socket.id,
+        message: 'Welcome to the Jungle'
+    })
+
+    socket.on('update', (d) => {
+        console.log(d)
     })
 
 })
-
-
-
-
 
 export default server

@@ -13,7 +13,7 @@ As we move into these larger projects we are also going to start enforcing stric
 
 You will notice that there are two main directories in this project. One for the frontend and the other is for the server. Having these distinct directories helps create a separation of concerns. To help cement this even further you will want to open up two instances of vscode, one for each directory. 
 
-You will know you have opened the folders correctly when you can press `f5` to start the server and `ctrl/cmd+shift+b` to start the client.
+You will need to launch both the client and the server independently. Make sure you push the play button in vs code on both projects.
 
 The goal of each of these projects is to be decoupled from each other. Meaning your web front-end should have no idea if your backend ever has to change databases, switch servers, or any number of other things that can often occur. Likewise our backend server shouldn't care at all about what JS-Flavor-of-the-Week-Framework we are using, or even if requests are coming from a mobile application. 
 

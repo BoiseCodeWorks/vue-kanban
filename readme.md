@@ -42,3 +42,31 @@ It will probably be helpful to start on the backend of this application first. U
 The active user is always stored on the server side via sessions so you should be able to enforce some of the security concerns using something like `req.session.uid`
 
 For now all users can see all collections and anyone can create boards, lists, tasks, or comments. Once  we have all of the features working we will move to an invite only board setup that will have boards belonging to a primary user and having contributors.
+
+### Making the Grade
+
+When wrapping up the kanban project its important that you make an app that is functional and easy to work with. Heres a list of the points for this project
+
+### Front-End: 30 Points
+
+- The Front End is styled
+- A user Must have the ability to log in and out. 
+- A user should not have to re-login everytime they refresh the page
+- From the Boards Page Users can create their own boards
+- From the Board Page a user can create and manage The Lists associated with the board
+- Tasks can be created inside any list
+- Tasks can be moved between lists (Does not have to be drag and drop)
+- A user can add and remove their own comments to a Task
+- A user has the ability to remove anything they create
+
+### Back-End: 10 Points
+
+- The Backend needs to be able to create and store the boards created by users
+- Each board can have lists
+- Each List can have tasks
+- Each task can have comments
+- Only authenticated users currently logged in can access the api (In Production you will want to disable the free `GETs`)
+
+### Bonus: 5 Points
+- Add to the front and backend the ability to have collaborators on boards
+- Add Sockets to the project so any collaborator gets instant feedback when users modify a board

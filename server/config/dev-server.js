@@ -1,11 +1,12 @@
-import env from './env'
-import express from 'express'
-import bodyParser from 'body-parser'
-import cors from 'cors'
-import { defaultErrorHandler, corsOptions } from './handlers'
-import api from '../models'
-import session from '../authentication/sessions'
-import Auth from '../authentication/auth'
+var env = require('./env')
+var express = require('express')
+var bodyParser = require('body-parser')
+var cors = require('cors')
+var defaultErrorHandler = require('./handlers').defaultErrorHandler
+var corsOptions = require('./handlers').corsOptions
+var api = require('../models')
+var session = require('../authentication/sessions')
+var Auth = require('../authentication/auth')
 
 // ENABLE ROUTES IF USING app SIDE ROUTING
 // import routes from './routes'
@@ -56,4 +57,4 @@ io.on('connection', function (socket) {
 
 })
 
-export default server
+module.exports = server

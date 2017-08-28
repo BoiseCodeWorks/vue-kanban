@@ -1,6 +1,6 @@
 let Boards = require('../models/board')
 
-export default {
+module.exports = {
   userBoards: {
     path: '/userboards',
     reqType: 'get',

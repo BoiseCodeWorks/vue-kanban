@@ -1,4 +1,6 @@
 import axios from 'axios'
+import vue from 'vue'
+import vuex from 'vuex'
 
 let api = axios.create({
   baseURL: 'http://localhost:3000/api/',
@@ -6,51 +8,73 @@ let api = axios.create({
   withCredentials: true
 })
 
-// REGISTER ALL DATA HERE 
-let state = {
-  boards: [{name: 'This is total rubbish'}],
-  activeBoard: {},
-  error: {}
-}
+let auth = axios.create({
+  baseURL: 'http://localhost:3000/',
+  timeout: 2000,
+  withCredentials: true
+})
+vue.use(vuex)
 
-let handleError = (err) => {
-  state.error = err
-}
-
-export default {
-  // ALL DATA LIVES IN THE STATE
-  state,
-  // ACTIONS ARE RESPONSIBLE FOR MANAGING ALL ASYNC REQUESTS
+var store = new vuex.Store({
+  state: {
+    boards: [{name: 'This is total rubbish'}],
+    activeBoard: {},
+    error: {}
+  },
+  mutations: {
+    setBoards(state, data){
+      state.boards = data
+    },
+    handleError(state, err){
+      state.error = err
+    }
+  },
   actions: {
-    getBoards() {
+    //when writing your auth routes (login, logout, register) be sure to use auth instead of api for the posts
+
+    getBoards({commit, dispatch}) {
       api('boards')
         .then(res => {
-          state.boards = res.data.data
+          commit('setBoards', res.data.data)
         })
-        .catch(handleError)
+        .catch(err=>{
+          commit('handleError', err)
+        })
     },
-    getBoard(id) {
+    getBoard({commit, dispatch},id) {
       api('boards/' + id)
         .then(res => {
-          state.activeBoard = res.data.data
+          commit('setActiveBoard', res.data.data)
         })
-        .catch(handleError)
+        .catch(err=>{
+          commit('handleError', err)
+        })
     },
-    createBoard(board) {
+    createBoard({commit, dispatch}, board) {
+      debugger
       api.post('boards/',board)
         .then(res => {
-          this.getBoards()
+          dispatch('getBoards')
         })
-        .catch(handleError)
+        .catch(err=>{
+          commit('handleError', err)
+        })
     },
-    removeBoard(board) {
+    removeBoard({commit, dispatch}, board) {
       api.delete('boards/'+board._id)
         .then(res => {
           this.getBoards()
         })
-        .catch(handleError)
+        .catch(err=>{
+          commit('handleError', err)
+        })
+    },
+    handleError({commit, dispatch}, err){
+      commit('handleError', err)
     }
   }
 
-}
+})
 
+
+export default store

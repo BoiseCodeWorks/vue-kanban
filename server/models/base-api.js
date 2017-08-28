@@ -1,6 +1,6 @@
-import { actions } from '../config/constants'
+var actions = require('../config/constants').actions
 
-export default API
+module.exports = API
 
 function API(model, schema) {
   if (model.preventDefaultApi) { return {} }

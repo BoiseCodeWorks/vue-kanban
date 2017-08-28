@@ -33,7 +33,7 @@ var corsOptions = {
 
 
 
-export {
+module.exports = {
 	defaultErrorHandler,
 	corsOptions
 }

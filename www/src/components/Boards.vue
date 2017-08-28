@@ -11,22 +11,22 @@
 export default {
   name: 'boards',
   mounted(){
-    this.$root.$data.store.actions.getBoards()
+    this.$store.dispatch('getBoards')
   },
   computed:{
     boards(){
-      return this.$root.$data.store.state.boards
+      return this.$store.state.boards
     }
   },
   methods:{
     createBoard(){
-      this.$root.$data.store.actions.createBoard({
+      this.$store.dispatch('createBoard', {
         name: 'Testing board creation',
         description: 'blarg'
       })
     },
     removeBoard(board){
-      this.$root.$data.store.actions.removeBoard(board)
+      this.$store.dispatch('removeBoard', board)
     }
   }
 }

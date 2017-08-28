@@ -4,13 +4,9 @@
   "description": "The server for vue-kanban",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "debug-15": "node --debug index.js",
-    "start-15": "node index.js",
-    "debug": "babel-node --presets es2015 --debug index.js",
-    "start": "babel-node --presets es2015 index.js",
-    "dev": "babel-node --presets es2015 index.js",
-    "run": "babel-node --presets es2015 index.js"
+    "debug": "node index.js",
+    "start": "node index.js",
+    "dev": "node index.js"
   },
   "author": "Jake Overall <joverall22@gmail.com>",
   "dependencies": {
@@ -27,7 +23,7 @@
     "socket.io": "^1.7.3"
   },
   "engines": {
-    "node": ">= 4.0.0",
-    "npm": ">= 3.0.0"
+    "node": ">= 8.0.0",
+    "npm": ">= 5.0.0"
   }
 }

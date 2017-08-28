@@ -18,9 +18,7 @@ socket.on('CONNECTED', function (data) {
 
 new Vue({
   el: '#app',
-  data: {
-    store
-  },
+  store,
   router,
   template: '<App/>',
   components: { App }

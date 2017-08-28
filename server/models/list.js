@@ -1,5 +1,4 @@
-import { models } from '../config/constants'
-
+var  models = require('../config/constants').models
 let mongoose = require('mongoose')
 let ObjectId = mongoose.Schema.ObjectId
 

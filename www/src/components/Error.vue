@@ -1,5 +1,5 @@
 <template>
-  <div> 
+  <div v-if="error.message"> 
     Error: {{error}}
   </div>
 </template>
@@ -9,7 +9,7 @@ export default {
   name: 'error',
   computed:{
     error(){
-      return this.$root.$data.store.state.error
+      return this.$store.state.error
     }
   }
 }

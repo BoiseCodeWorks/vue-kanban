@@ -1,6 +1,6 @@
-import { Router } from 'express'
-import { models } from '../config/constants'
-import BaseApi from './base-api'
+var Router = require('express').Router
+var models = require('../config/constants').models
+var BaseApi = require('./base-api')
 
 let api = Router();
 
@@ -25,4 +25,4 @@ Object.keys(models).forEach((k) => {
 
 });
 
-export default api
+module.exports = api

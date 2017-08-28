@@ -24,7 +24,7 @@ const models = {
 }
 
 
-export  {
+module.exports = {
   actions,
   models
 }

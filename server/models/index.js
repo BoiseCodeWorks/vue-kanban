@@ -13,7 +13,7 @@ Object.keys(models).forEach((k) => {
 	})
 
 	if(model.useCustomRoutes){
-		let customRoutes = require('../custom-routes/' + model.name.toLowerCase() + '-routes').default
+		let customRoutes = require('../custom-routes/' + model.name.toLowerCase() + '-routes')
 		if(customRoutes){
 			Object.keys(customRoutes).forEach(k => {
 				let route = customRoutes[k]

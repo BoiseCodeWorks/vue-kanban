@@ -21,10 +21,10 @@ The goal of each of these projects is to be decoupled from each other. Meaning y
 
 
 ### The Server
-On the server we are utilizing a node-mongodb setup with express sessions and a mongoose ORM. The server side code has been setup in a somewhat oppionated architecture that will help and hinder you. You will want to make sure that you work within the confines of what has been setup for you to this point. 
+On the server you will utilize a node-mongodb setup with express sessions and a mongoose ORM. The server side code needs to be setup similar to your previous projects. You will need to create a new free database at mlab for this assignment.
 
 ### The WWW Client
-The Web client has been setup to utilize one of the shiney new javascript frameworks Vuejs. There are several advantages to using this setup but again it will force you into utilizing a structure that you may not be ver comfortable with. 
+The Web client will be a vue application. Create your www folder and then run `vue init webpack` be sure to install the router as you will need it for this project. Also don't forget to pull in `vuex` 
 
 
 ### Feature Requests (AKA your tasks)
